@@ -8,6 +8,7 @@ import picocli.CommandLine.Parameters;
 import java.io.File;
 import java.util.concurrent.Callable;
 
+
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "1.0",
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable<Integer> {
@@ -23,14 +24,19 @@ public class App implements Callable<Integer> {
 
 
     public static void main(String... args) {
-        System.out.println("----------------------");
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }
 
     @Override
     public Integer call() throws Exception {
-        // логика сравнения
+
+        System.out.println(filepath1.toString());
+        System.out.println(filepath2.toString());
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        String output = Differ.generate(filepath1.toString(), filepath2.toString());
+
+        System.out.println(output);
         return 0;
     }
 }

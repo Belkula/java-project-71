@@ -21,6 +21,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("info.picocli:picocli:4.7.5")
     kapt("info.picocli:picocli-codegen:4.7.5")
+    implementation ("com.googlecode.json-simple:json-simple:1.1.1")
+    implementation ("com.fasterxml.jackson.core:jackson-databind:2.15.2")
 }
 
 tasks.test {
