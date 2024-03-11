@@ -29,6 +29,12 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+	finalizedBy(tasks.jacocoTestReport)
+
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
 }
 
 kapt {
