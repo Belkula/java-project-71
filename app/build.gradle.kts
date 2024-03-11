@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("application")
+	id("checkstyle")
     id("org.jetbrains.kotlin.jvm") version "1.6.10"
     id("org.jetbrains.kotlin.kapt") version "1.6.10"
 }
