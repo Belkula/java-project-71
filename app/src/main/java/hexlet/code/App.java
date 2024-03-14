@@ -31,12 +31,8 @@ public class App implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
 
-        System.out.println(filepath1.toString());
-        System.out.println(filepath2.toString());
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String output = Differ.generate(filepath1.toString(), filepath2.toString());
-
-        System.out.println(output);
+		Styles.Formater(format, output);
         return 0;
     }
 }
