@@ -1,44 +1,60 @@
 package hexlet.code;
-import org.json.simple.parser.ParseException;
 
-import java.io.IOException;
-import java.util.TreeMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Differ {
-	
-	public static String mapDiff(Map<String, Object> map1, Map<String, Object> map2) throws ParseException {
-    Map<String, Object> keysFromBothMaps = new TreeMap<>();
-    keysFromBothMaps.putAll(map1);
-    keysFromBothMaps.putAll(map2);
-    StringBuilder output = new StringBuilder("{\n");
+	    public static final String REMOVED = "removed";
+		public static final String ADDED = "added";
+		public static final String UPDATED = "updated";
+		public static final String NOT_CHANGED = "not Changed";
 
-    for (Map.Entry<String, Object> entry : keysFromBothMaps.entrySet()) {
-        Object map1Value = map1.get(entry.getKey());
-        Object map2Value = map2.get(entry.getKey());
+    public static String getDiff(Object Map1, Object Map2) {
+		StringBuilder strOut = new StringBuilder();
+		if (Map1 != null && Map2 == null) {
+			return REMOVED;
+		} else if (Map1 != null && Map2 != null && Map1.equals(Map2)) {
+			return NOT_CHANGED;
+		} else if (Map1 != null && Map2 != null) {
+			return UPDATED;
+		} else if (Map1 == null && Map2 != null) {
+			return ADDED;
+		} else {
+			return NOT_CHANGED;
+		}
+		}
 
-        if (map1Value != null) {
-            if (map2Value == null) {
-                output.append("- ").append(entry.getKey()).append(": ").append(map1Value).append("\n");
-            } else if (map1Value.equals(map2Value)) {
-                output.append("  ").append(entry.getKey()).append(": ").append(map1Value).append("\n");
-            } else {
-                output.append("- ").append(entry.getKey()).append(": ").append(map1Value).append("\n");
-                output.append("+ ").append(entry.getKey()).append(": ").append(map2Value).append("\n");
-            }
-        } else {
-            output.append("+ ").append(entry.getKey()).append(": ").append(map2Value).append("\n");
+
+	 public static List<Differs> TreeMapsDiff(TreeMap<String, Object> treeMap1, TreeMap<String, Object> treeMap2) {
+        List<Differs> treeMapDiff = new LinkedList<>();
+        Object Map1;
+        Object Map2;
+
+        TreeMap<String, Object> keysFromBothFile = new TreeMap<>();
+        keysFromBothFile.putAll(treeMap1);
+        keysFromBothFile.putAll(treeMap2);
+
+        for (Map.Entry<String, Object> entry : keysFromBothFile.entrySet()) {
+            Map1 = treeMap1.get(entry.getKey());
+            Map2 = treeMap2.get(entry.getKey());
+
+            Differs differs = new Differs(Map1, Map2,entry.getKey(), getDiff(Map1, Map2));
+            treeMapDiff.add(differs);
+
         }
-    }
 
-    output.append("}\n");
+        return treeMapDiff;
 
-    return output.toString();
-}
-	
-    public static String generate(String filePath1, String filePath2) throws IOException, ParseException {
-	    TreeMap<String, Object> map1 = Parser.readFile(filePath1);
-        TreeMap<String, Object> map2 = Parser.readFile(filePath2);
-		return mapDiff(map1,map2);
+	}
+
+
+    public static String generate(String filePath1, String filePath2, String format) throws Exception {
+        TreeMap<String, Object> treeMap1 = Parser.readFile(filePath1);
+        TreeMap<String, Object> treeMap2 = Parser.readFile(filePath2);
+        List<Differs> treeMapsDiffs = TreeMapsDiff(treeMap1, treeMap2);
+
+        return Styles.Formater(format, treeMapsDiffs);
     }
 }

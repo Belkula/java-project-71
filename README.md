@@ -9,3 +9,5 @@
 <a href="https://asciinema.org/a/fZSi0RpDiQqfRKXt8UWwHMs8I" target="_blank"><img src="https://asciinema.org/a/fZSi0RpDiQqfRKXt8UWwHMs8I.svg" /></a>
 <a>шаг 8</a>
 <a href="https://asciinema.org/a/2dFybKOhYaQKZR9rl51q148Dq" target="_blank"><img src="https://asciinema.org/a/2dFybKOhYaQKZR9rl51q148Dq.svg" /></a>
+<a>шаг 9</a>
+<a href="https://asciinema.org/a/4nIBWTl1Pz8zGilXTvGLj9GXM" target="_blank"><img src="https://asciinema.org/a/4nIBWTl1Pz8zGilXTvGLj9GXM.svg" /></a>
