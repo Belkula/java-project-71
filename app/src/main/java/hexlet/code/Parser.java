@@ -24,7 +24,7 @@ public class Parser {
                 mapper = new YAMLMapper();
                 break;
             default:
-                break;
+                throw new IllegalArgumentException("Неподдерживаемый формат файла!");
         }
         return mapper;
     }

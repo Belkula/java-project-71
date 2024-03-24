@@ -59,8 +59,8 @@ public class FormTest {
         switch (style) {
             case "json":
                 result = "{"
-                    + "\"key\":\"chars1\",\"status\":\"not "
-                    + "Changed\",\"oldValue\":[\"a\",\"b\",\"c\"],\"newValue\":[\"a\",\"b\",\"c\"]},\n"
+                    + "\"key\":\"chars1\",\"status\":\"not Changed\",\"oldValue\":[\"a\",\"b\",\"c\"],\"new"
+                    + "Value\":[\"a\",\"b\",\"c\"]},\n"
                     + "{" + "\"key\":\"chars2\",\"status\":\"updated\",\"old"
                     + "Value\":[\"d\",\"e\",\"f\"],\"newValue\":false},\n"
                     + "{" + "\"key\":\"checked\",\"status\":\"updated\",\"old"
@@ -89,6 +89,7 @@ public class FormTest {
                     + "Value\":200,\"newValue\":300},\n"
                     + "{" + "\"key\":\"setting3\",\"status\":\"updated\",\"old"
                     + "Value\":true,\"newValue\":\"none\"" + "}";
+
                 break;
             case "plain":
                 result = "Property 'chars2' was updated. From [complex value] to false\n"
