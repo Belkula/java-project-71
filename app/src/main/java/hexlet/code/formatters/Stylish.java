@@ -24,17 +24,17 @@ public class Stylish {
         for (Differs differ: output) {
             switch (differ.getStatus()) {
                 case REMOVED:
-                    outStr.append("- " + differ.getKey() + ": " + toStringExceptNull(differ.getOldValue()) + "\n");
+                    outStr.append("  - " + differ.getKey() + ": " + toStringExceptNull(differ.getOldValue()) + "\n");
                     break;
                 case NOT_CHANGED:
-                    outStr.append("  " + differ.getKey() + ": " + toStringExceptNull(differ.getOldValue()) + "\n");
+                    outStr.append("    " + differ.getKey() + ": " + toStringExceptNull(differ.getOldValue()) + "\n");
                     break;
                 case UPDATED:
-                    outStr.append("- " + differ.getKey() + ": " + toStringExceptNull(differ.getOldValue()) + "\n");
-                    outStr.append("+ " + differ.getKey() + ": " + toStringExceptNull(differ.getNewValue()) + "\n");
+                    outStr.append("  - " + differ.getKey() + ": " + toStringExceptNull(differ.getOldValue()) + "\n");
+                    outStr.append("  + " + differ.getKey() + ": " + toStringExceptNull(differ.getNewValue()) + "\n");
                     break;
                 case ADDED:
-                    outStr.append("+ " + differ.getKey() + ": " + toStringExceptNull(differ.getNewValue()) + "\n");
+                    outStr.append("  + " + differ.getKey() + ": " + toStringExceptNull(differ.getNewValue()) + "\n");
                 default:
                     break;
             }
