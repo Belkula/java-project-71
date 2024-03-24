@@ -11,6 +11,13 @@ public class Differ {
     public static final String UPDATED = "updated";
     public static final String NOT_CHANGED = "not Changed";
 
+    /** компилирует разницу между двумя объектами.
+     *
+     * @param map1 первый объект.
+     * @param map2 второй объект.
+     * @return возвращает разницу между объектами.
+     */
+
     public static String getDiff(Object map1, Object map2) {
         String result = NOT_CHANGED;
 
@@ -27,6 +34,13 @@ public class Differ {
         }
         return result;
     }
+
+    /** Собирает разницу между двумя картами.
+     *
+     * @param treemap1 Первая карта.
+     * @param treemap2 Вторая карта.
+     * @return Список различий между двумя картами.
+     */
 
     public static List<Differs> treeMapsDiff(TreeMap<String, Object> treemap1, TreeMap<String, Object> treemap2) {
         List<Differs> treeMapDiff = new LinkedList<>();
@@ -47,6 +61,14 @@ public class Differ {
         }
         return treeMapDiff;
     }
+
+    /** Генерирует отчёт различий между двумя файлами.
+     *
+     * @param filePath1 путь к первому файлу.
+     * @param filePath2 путь ко второму файлу.
+     * @return возвращает различия.
+     * @throws Exception Выдаёт ошибку.
+     */
 
     public static String generate(String filePath1, String filePath2) throws Exception {
         return generate(filePath1, filePath2, "stylish");

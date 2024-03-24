@@ -27,6 +27,13 @@ public class App implements Callable<Integer> {
         System.exit(exitCode);
     }
 
+/** Главная логика приложения.
+ * сравнивает 2 файла и выводит разницу между ними
+ *
+ * @return 0 если операция была успешна
+ * @throws Exception если была ошибка
+ */
+
     @Override
     public Integer call() throws Exception {
         String output = Differ.generate(filepath1.toString(), filepath2.toString(), format);

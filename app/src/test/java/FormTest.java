@@ -54,10 +54,15 @@ public class FormTest {
         assertEquals(referenceStr, output);
     }
 
+    /** Возвращает конкретный стиль.
+    *
+    * @param style формат нужного стиля.
+    * @return Возвращает проверочный текст нужного стиля.
+    */
+
     public String getReference(String style) {
         String result;
         switch (style) {
-			case "JSON":
             case "json":
                 result = "{"
                     + "\"key\":\"chars1\",\"status\":\"not Changed\",\"oldValue\":[\"a\",\"b\",\"c\"],\"new"
