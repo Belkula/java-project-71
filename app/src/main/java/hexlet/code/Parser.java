@@ -21,6 +21,8 @@ public class Parser {
                 break;
             case "yml":
             case "yaml":
+			case "YAML":
+			case "YML":
                 mapper = new YAMLMapper();
                 break;
             default:
