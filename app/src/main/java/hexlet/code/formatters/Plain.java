@@ -46,6 +46,10 @@ public class Plain {
                     break;
             }
         }
+		
+    if (outStr.length() > 0) {
+        outStr.setLength(outStr.length() - 1);
+    }
 
         return outStr.toString();
     }
