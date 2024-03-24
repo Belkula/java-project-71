@@ -6,7 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class json {
+public class Json {
     public static String formatJson(List<Differs> output) {
         ObjectMapper objectMapper = new ObjectMapper();
         StringBuilder outStr = new StringBuilder();

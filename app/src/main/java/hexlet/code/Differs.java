@@ -7,10 +7,10 @@ public class Differs {
     private Object oldValue;
     private Object newValue;
 
-    public Differs(Object oldValue, Object newValue, String key, String status ) {
+    public Differs(Object oldValue, Object newValue, String key, String status) {
         this.oldValue = oldValue;
         this.newValue = newValue;
-		this.key = key;
+        this.key = key;
         this.status = status;
     }
 
@@ -31,7 +31,6 @@ public class Differs {
     }
 
     public String toString() {
-        //return "{key:" + key + "; status:" + status + "; oldValue:" + oldValue + "; newValue:" + newValue + "}";
         return ("\"" + key + "\", \"" + status + "\", \"" + oldValue + "\", \"" + newValue + "\"");
     }
 }
