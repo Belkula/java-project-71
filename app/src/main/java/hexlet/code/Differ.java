@@ -48,6 +48,10 @@ public class Differ {
         return treeMapDiff;
     }
 
+    public static String generate(String filePath1, String filePath2) throws Exception {   
+        return generate(filePath1, filePath2, "stylish")
+    }
+
     public static String generate(String filePath1, String filePath2, String format) throws Exception {
         TreeMap<String, Object> treemap1 = Parser.readFile(filePath1);
         TreeMap<String, Object> treemap2 = Parser.readFile(filePath2);
