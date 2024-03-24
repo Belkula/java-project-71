@@ -12,11 +12,11 @@ public class Plain {
 
     private static String complexValues(Object value) {
         String result;
-        if (value == null || "null".equals(value)) {
+        if (value == null) {
             result = null;
-        }
-
-        if (value.toString().contains("[") || value.toString().contains("{")) {
+        } else if ("null".equals(value)) {
+            result = "null";
+        } else if (value.toString().contains("[") || value.toString().contains("{")) {
             result = "[complex value]";
         } else if (value instanceof String) {
             result = "'" + value.toString() + "'";
@@ -46,10 +46,10 @@ public class Plain {
                     break;
             }
         }
-		
-    if (outStr.length() > 0) {
-        outStr.setLength(outStr.length() - 1);
-    }
+
+        if (outStr.length() > 0) {
+            outStr.setLength(outStr.length() - 1);
+        }
 
         return outStr.toString();
     }
