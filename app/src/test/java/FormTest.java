@@ -133,7 +133,7 @@ public class FormTest {
                     + "+ setting2: 300\n"
                     + "- setting3: true\n"
                     + "+ setting3: none\n"
-                    + "}\n";
+                    + "}";
                 break;
         }
         return result;

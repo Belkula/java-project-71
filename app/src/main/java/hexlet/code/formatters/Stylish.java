@@ -40,7 +40,7 @@ public class Stylish {
             }
         }
 
-        outStr.append("}\n");
+        outStr.append("}");
         return outStr.toString();
     }
 }

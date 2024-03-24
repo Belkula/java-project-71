@@ -19,10 +19,10 @@ public class Parser {
             case "json":
                 mapper = new ObjectMapper();
                 break;
-            case "yml":
+            case ".yml":
             case "yaml":
 			case "YAML":
-			case "YML":
+			case ".YML":
                 mapper = new YAMLMapper();
                 break;
             default:
