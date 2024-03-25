@@ -11,10 +11,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Parser {
+    public static final int  STEP = 4;
 
     private static ObjectMapper getObjectMapper(String filePath) {
         ObjectMapper mapper = null;
-        String extension = filePath.substring(filePath.length() - 4);
+        String extension = filePath.substring(filePath.length() - STEP);
         switch (extension) {
             case "json":
                 mapper = new ObjectMapper();
